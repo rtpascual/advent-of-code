@@ -32,7 +32,6 @@ async function part2() {
 
     for (const line of data) {
         const convertedLine = replaceNumberWordsToDigits(line);
-        console.log(line, convertedLine)
         const { first, last } = getFirstAndLastNumbers(convertedLine);
         total += parseInt(first + last);
     }
