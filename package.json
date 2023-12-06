@@ -1,11 +1,11 @@
 {
   "scripts": {
-    "start": "ts-node --esm ./src/2023/day${npm_config_num}/solution.ts"
+    "start": "npx tsx ./src/2023/day${npm_config_num}/solution.ts"
   },
   "type": "module",
   "dependencies": {
     "fs-extra": "^11.2.0",
-    "ts-node": "^10.9.1",
+    "tsx": "^4.6.2",
     "typescript": "^5.3.2"
   },
   "devDependencies": {

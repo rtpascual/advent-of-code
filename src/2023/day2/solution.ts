@@ -1,6 +1,7 @@
 import fs from "fs/promises";
 import path from "path";
 import { fileURLToPath } from "url";
+import { profile } from "../../utils/profile";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -121,5 +122,10 @@ function getFewestColors(game: string) {
   return { minRed, minGreen, minBlue };
 }
 
-console.log(await part1());
-console.log(await part2());
+profile("part 1", async () => {
+  console.log(await part1());
+});
+
+profile("part 2", async () => {
+  console.log(await part2());
+});
