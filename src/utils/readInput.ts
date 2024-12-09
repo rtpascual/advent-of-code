@@ -1,8 +1,15 @@
 import fs from 'fs/promises';
-import path from "path";
 
 /**
- * Reads input file and returns data
+ * Reads input file and returns data as string
+ */
+export async function getData(filePath: string): Promise<string> {
+  const file = await fs.readFile(filePath);
+  return file.toString();
+}
+
+/**
+ * Reads input file and returns data array
  */
 export async function getDataArray(filePath: string): Promise<string[]> {
   const file = await fs.readFile(filePath);
