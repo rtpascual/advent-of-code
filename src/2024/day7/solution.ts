@@ -1,12 +1,12 @@
 import path from "path";
 import { fileURLToPath } from "url";
 import { profile } from '../../utils/profile';
-import { getData } from '../../utils/readInput';
+import { getDataArray } from '../../utils/readInput';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 async function part1() {
-  const data = await getData(path.join(__dirname, 'input.txt'));
+  const data = await getDataArray(path.join(__dirname, 'input.txt'));
   let total = 0;
 
   for (let i = 0; i < data.length; i++) {
@@ -25,7 +25,7 @@ async function part1() {
 }
 
 async function part2() {
-  const data = await getData(path.join(__dirname, 'input.txt'));
+  const data = await getDataArray(path.join(__dirname, 'input.txt'));
   let total = 0;
 
   for (let i = 0; i < data.length; i++) {

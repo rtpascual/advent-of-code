@@ -4,7 +4,7 @@ import path from "path";
 /**
  * Reads input file and returns data
  */
-export async function getData(filePath: string): Promise<string[]> {
+export async function getDataArray(filePath: string): Promise<string[]> {
   const file = await fs.readFile(filePath);
   return file.toString().split('\n');
 }
