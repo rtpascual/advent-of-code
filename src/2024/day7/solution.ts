@@ -1,18 +1,12 @@
-import fs from 'fs/promises';
 import path from "path";
 import { fileURLToPath } from "url";
 import { profile } from '../../utils/profile';
+import { getData } from '../../utils/readInput';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-async function getData() {
-  const file = await fs.readFile(path.join(__dirname, "input.txt"));
-  const data = file.toString().split('\n');
-  return data;
-}
-
 async function part1() {
-  const data = await getData();
+  const data = await getData(path.join(__dirname, 'input.txt'));
   let total = 0;
 
   for (let i = 0; i < data.length; i++) {
@@ -31,7 +25,7 @@ async function part1() {
 }
 
 async function part2() {
-  const data = await getData();
+  const data = await getData(path.join(__dirname, 'input.txt'));
   let total = 0;
 
   for (let i = 0; i < data.length; i++) {

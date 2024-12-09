@@ -1,29 +1,14 @@
-import fs from 'fs/promises';
 import path from "path";
 import { fileURLToPath } from "url";
 import { profile } from '../../utils/profile';
+import { getData2d } from '../../utils/readInput';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const guard = '^';
 let gr = 0;
 let gc = 0;
 
-async function getData() {
-  const file = await fs.readFile(path.join(__dirname, "input.txt"));
-  const rows = file.toString().split('\n');
-  const data: string[][] = [];
-
-  for (let i = 0; i < rows.length; i++) {
-    data[i] = rows[i].split('');
-    if (rows[i].includes(guard)) {
-      gr = i;
-      gc = data[i].indexOf(guard);
-    }
-  }
-  return data
-}
-
-const data = await getData();
+const data = await getData2d(path.join(__dirname, 'input.txt'));
 const maxRows = data.length;
 const maxCols = data[0].length;
 const directions = [

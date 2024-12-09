@@ -1,29 +1,17 @@
-import fs from 'fs/promises';
-import path from "path";
-import { fileURLToPath } from "url";
+import path from 'path';
 import { profile } from '../../utils/profile';
+import { getData2d } from '../../utils/readInput';
+import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-async function getData() {
-  const file = await fs.readFile(path.join(__dirname, "input.txt"));
-  const rows = file.toString().split('\n');
-  const data: string[][] = [];
-
-  for (let i = 0; i < rows.length; i++) {
-    data[i] = rows[i].split('');
-  }
-
-  return data;
-}
-
 async function part1() {
-  const data = await getData();
+  const data = await getData2d(path.join(__dirname, 'input.txt'));
   return calculateAntinodes(data);
 }
 
 async function part2() {
-  const data = await getData();
+  const data = await getData2d(path.join(__dirname, 'input.txt'));
   return calculateAntinodes(data, true);
 }
 
