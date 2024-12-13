@@ -1,7 +1,8 @@
 {
   "scripts": {
-    "start": "tsx ./src/2024/day${npm_config_num}/solution.ts",
-    "start:watch": "tsx watch ./src/2024/day${npm_config_num}/solution.ts"
+    "setup:day": "tsx scripts/setup_day.ts",
+    "start": "tsx src/2024/day${npm_config_num}/solution.ts",
+    "start:watch": "tsx watch src/2024/day${npm_config_num}/solution.ts"
   },
   "type": "module",
   "dependencies": {
