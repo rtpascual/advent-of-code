@@ -1,6 +1,4 @@
 import fsp from 'fs/promises';
-import path from 'path';
-import { fileURLToPath } from 'url';
 
 const year = new Date().getFullYear();
 const dayNumber = process.argv[2];

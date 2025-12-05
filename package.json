@@ -1,16 +1,16 @@
 {
   "scripts": {
     "setup:day": "tsx scripts/setup_day.ts",
-    "start": "tsx src/2024/day${npm_config_num}/solution.ts",
-    "start:watch": "tsx watch src/2024/day${npm_config_num}/solution.ts"
+    "start": "tsx src/2025/day${npm_config_num}/solution.ts",
+    "start:watch": "tsx watch src/2025/day${npm_config_num}/solution.ts"
   },
   "type": "module",
   "dependencies": {
-    "fs-extra": "^11.2.0",
-    "tsx": "^4.19.2",
-    "typescript": "^5.7.2"
+    "fs-extra": "^11.3.2",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@types/node": "^20.10.2"
+    "@types/node": "^24.10.1"
   }
 }
