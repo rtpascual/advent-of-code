@@ -15,7 +15,6 @@ async function part1() {
     const distString = rotation.slice(1);
 
     current = rotate(current, dir, Number(distString));
-    console.log(`new current=${current}`);
 
     if (current === 0) {
       zeros++;
@@ -35,12 +34,27 @@ async function part2() {
     const distString = rotation.slice(1);
     const distNum = Number(distString);
 
-    const numZeros = (current + distNum) % 100;
+    if (dir === 'L') {
+      for (let i = 0; i < distNum; i++) {
+        current = normalize(current - 1);
+        if (current === 0) {
+          zeros++;
+        }
+      }
+    } else {
+      for (let i = 0; i < distNum; i++) {
+        current = normalize(current + 1);
+        if (current === 0) {
+          zeros++;
+        }
+      }
+    }
   }
+
+  return zeros;
 }
 
 function rotate(current: number, direction: string, distance: number): number {
-  console.log(`start of rotate current=${current} direction=${direction} distance=${distance}`);
   if (direction === 'L') {
     current -= distance;
   } else {
